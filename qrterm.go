@@ -38,6 +38,8 @@ func RunApp() error {
 				return fmt.Errorf("Failed to open default browser: %s", err)
 			}
 		}
+		// Clear clipboard buffer
+		clipboard.Write(clipboard.FmtText, []byte(""))
 	} else {
 		// Otherwise, write to clipboard
 		clipboard.Write(clipboard.FmtText, []byte(result))
