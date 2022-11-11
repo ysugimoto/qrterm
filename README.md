@@ -44,7 +44,9 @@ func main() {
       return
     }
     log.Println(err)
+    return
   }
+  log.Println(data)
 }
 ```
 
