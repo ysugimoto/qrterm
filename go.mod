@@ -1,4 +1,4 @@
-module ui
+module github.com/ysugimoto/qrterm
 
 go 1.18
 
