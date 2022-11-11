@@ -14,11 +14,15 @@ Or download binary from [Releases]() page.
 
 Before use this command, make sure your terminal is permitted of `Screen Recording`. Confirm your Security and Privacy setting.
 
+<img width="780" alt="Screen Shot 2022-11-11 at 9 13 25" src="https://user-images.githubusercontent.com/1000401/201233848-4890b6da-dd20-4928-aef6-2eb590966618.png">
+
 
 ### Terminal App
 
 Simply type `qrterm` command in your terminal, then runs ScreenCapture app and capture target QR Code.
 After captured, read QR data and open dialog.
+
+<img width="532" alt="Screen Shot 2022-11-11 at 9 18 15" src="https://user-images.githubusercontent.com/1000401/201233873-e9be1e5b-ab42-4ec6-bd83-9c0bf740f1f6.png">
 
 ### Program
 
