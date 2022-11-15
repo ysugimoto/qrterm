@@ -26,10 +26,15 @@ func init() {
 
 // Run as application. Display dialog and open browser
 func RunApp() error {
+	stored := clipboard.Read(clipboard.FmtText)
 	result, err := RunProgram()
 	if err != nil {
+		if stored != nil {
+			clipboard.Write(clipboard.FmtText, stored)
+		}
 		return err
 	}
+
 
 	if strings.HasPrefix(result, "http://") || strings.HasPrefix(result, "https://") {
 		// If read data starts with http[s]://, dialog to open URL with browser
@@ -38,8 +43,13 @@ func RunApp() error {
 				return fmt.Errorf("Failed to open default browser: %s", err)
 			}
 		}
-		// Clear clipboard buffer
-		clipboard.Write(clipboard.FmtText, []byte(""))
+		// Restore clipboard buffer
+		if stored != nil {
+			clipboard.Write(clipboard.FmtText, stored)
+		} else {
+			// Otherwise, clear buffer
+			clipboard.Write(clipboard.FmtText, []byte(""))
+		}
 	} else {
 		// Otherwise, write to clipboard
 		clipboard.Write(clipboard.FmtText, []byte(result))
